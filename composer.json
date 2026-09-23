@@ -22,7 +22,7 @@
         "illuminate/routing": "^11.0 || ^12.0 || ^13.0",
         "illuminate/support": "^11.0 || ^12.0 || ^13.0",
         "illuminate/view": "^11.0 || ^12.0 || ^13.0",
-        "quebecstudio-mods/consent-kit-core": "^1.0"
+        "quebecstudio-mods/consent-kit-core": "^1.1"
     },
     "require-dev": {
         "orchestra/testbench": "^9.0 || ^10.0 || ^11.0",

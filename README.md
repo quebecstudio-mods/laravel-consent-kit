@@ -45,8 +45,7 @@ JSON, redirects, file and streamed responses are left untouched.
 ## Configuration
 
 `config/cookie-consent.php`. The keys follow the core's settings; the
-Craft-only ones (`policySource`, `policyEntry`, `pluginName`, `templateRoot`)
-do not apply.
+Craft-only ones (`policySource`, `policyEntry`, `templateRoot`) do not apply.
 
 | Key | Default | What it does |
 |---|---|---|
@@ -55,7 +54,7 @@ do not apply.
 | `version` | `1` | Increase to ask every visitor again |
 | `policyUrl` | `/privacy-policy` | Policy link in the banner; empty shows none |
 | `defaultLanguage` | `en` | Language when the locale has no wording file |
-| `autoInject` | `true` | Adds the banner to every page |
+| `autoInject` | `true` | Adds the banner to every HTML page the middleware sees |
 | `colorScheme` | `auto` | `auto`, `light`, `dark` |
 | `backdropStyle` | `blur` | `blur`, `dim`, `none` |
 | `displayMode` | `full` | `full`, `floating`, `corner-left`, `corner-right`; full width under 40rem |
@@ -172,6 +171,13 @@ the `laravel-assets` tag, which the Laravel application skeleton republishes on
 
 Styling, the JavaScript API, conditional tags and integration recipes are the
 same as for the Craft plugin; see its documentation.
+
+## Recording consents
+
+The package does not keep a register of decisions, but everything needed to
+build one is there: an event, a beacon script, and the server-side fingerprint
+of what the banner was showing.
+[Recording consents](docs/recording-consents.md) walks through it.
 
 ## Tests
 
