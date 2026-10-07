@@ -16,6 +16,7 @@ return [
     'colorScheme' => 'auto',    
     'backdropStyle' => 'blur',  
     'displayMode' => 'full',    
+    'reserveSpace' => false,    
     'reopenButton' => true,
     'reopenPosition' => 'auto', 
     'gpcHidesBanner' => true,

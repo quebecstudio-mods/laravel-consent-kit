@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 - 2026-10-06
+
+### Added
+
+- `reserveSpace`: the full-width banner becomes sticky, so it takes its own
+  height at the end of the page instead of covering the footer, and that space
+  opens and closes with it. Off by default.
+
 ## 1.1.0 - 2026-09-23
 
 ### Added

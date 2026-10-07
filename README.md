@@ -1,8 +1,12 @@
 # Cookie Consent for Laravel — `quebecstudio-mods/laravel-consent-kit`
 
 Cookie consent banner for Laravel 11 to 13, built for Quebec's Law 25 and usable
-under the GDPR. Built on `quebecstudio-mods/consent-kit-core`, shared with the
-Craft CMS plugin.
+under the GDPR. Built on `quebecstudio-mods/consent-kit-core`.
+
+The same kit is also a Craft CMS plugin (link to the Plugin Store to come) and
+a Statamic addon (link to the Marketplace to come). The Statamic addon is built
+on this package: Statamic is a Laravel application, so the middleware here
+injects the banner unchanged.
 
 - No third-party cookie is set before consent.
 - The HTML is the same for every visitor; pages stay cacheable.
@@ -58,6 +62,7 @@ Craft-only ones (`policySource`, `policyEntry`, `templateRoot`) do not apply.
 | `colorScheme` | `auto` | `auto`, `light`, `dark` |
 | `backdropStyle` | `blur` | `blur`, `dim`, `none` |
 | `displayMode` | `full` | `full`, `floating`, `corner-left`, `corner-right`; full width under 40rem |
+| `reserveSpace` | `false` | Full width (and every mode under 40rem): the banner is sticky, takes its own height at the end of the page instead of covering the footer, and that space opens and closes with it. The banner must sit at the end of `<body>`, as `autoInject` puts it |
 | `reopenButton` | `true` | Tab that reopens the banner |
 | `reopenPosition` | `auto` | Its side: `left`, `right`, or `auto`, right for `corner-right` |
 | `gpcHidesBanner` | `true` | Skips the banner under Global Privacy Control |
