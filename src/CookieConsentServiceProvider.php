@@ -31,7 +31,7 @@ final class CookieConsentServiceProvider extends ServiceProvider
             $kernel->appendMiddlewareToGroup('web', InjectConsent::class);
         }
 
-        Route::get('cookie-consent/thumbnail', ThumbnailController::class)->name('cookie-consent.thumbnail');
+        Route::get('consent-kit/thumbnail', ThumbnailController::class)->name('cookie-consent.thumbnail');
 
         $service = '\\' . CookieConsent::class;
 
@@ -51,8 +51,8 @@ final class CookieConsentServiceProvider extends ServiceProvider
         ], 'cookie-consent-config');
 
         $assets = [
-            Paths::asset('consent.css') => public_path('vendor/cookie-consent/consent.css'),
-            Paths::asset('consent.js') => public_path('vendor/cookie-consent/consent.js'),
+            Paths::asset('consent.css') => public_path('vendor/consent-kit/consent.css'),
+            Paths::asset('consent.js') => public_path('vendor/consent-kit/consent.js'),
         ];
 
         $this->publishes($assets, 'cookie-consent-assets');

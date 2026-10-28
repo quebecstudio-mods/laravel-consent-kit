@@ -195,12 +195,22 @@ final class CookieConsent
         return $settings;
     }
 
+    /**
+     * Ad blockers drop any URL with a `/cookie-consent/` segment, so the assets
+     * live in `vendor/consent-kit`; a copy published before 1.3 is still used.
+     */
     private function assetUrl(string $file): string
     {
-        $published = public_path("vendor/cookie-consent/$file");
+        $directory = 'vendor/consent-kit';
+
+        if (!is_file(public_path("$directory/$file")) && is_file(public_path("vendor/cookie-consent/$file"))) {
+            $directory = 'vendor/cookie-consent';
+        }
+
+        $published = public_path("$directory/$file");
         $version = is_file($published) ? substr(md5((string)filemtime($published)), 0, 8) : '';
 
-        return asset("vendor/cookie-consent/$file") . ($version !== '' ? "?v=$version" : '');
+        return asset("$directory/$file") . ($version !== '' ? "?v=$version" : '');
     }
 
     private function render(string $template, array $variables): HtmlString

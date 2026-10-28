@@ -150,7 +150,7 @@ markers replaced; like `{!! !!}`, use it only for HTML you trust.
 | `config()` | the resolved configuration |
 
 YouTube posters are served by the route `cookie-consent.thumbnail`
-(`/cookie-consent/thumbnail?v=<id>`), outside the `web` group, and cached in
+(`/consent-kit/thumbnail?v=<id>`), outside the `web` group, and cached in
 `storage/app/cookie-consent-thumbnails/`.
 
 ## Overriding templates
@@ -168,9 +168,10 @@ Keep the `data-qsm-ck-*` attributes: the script finds every control through them
 ## Assets
 
 `vendor:publish --tag=cookie-consent-assets` copies `consent.js` and
-`consent.css` to `public/vendor/cookie-consent/`. They are also published with
+`consent.css` to `public/vendor/consent-kit/`. They are also published with
 the `laravel-assets` tag, which the Laravel application skeleton republishes on
-`composer update`.
+`composer update`. The directory avoids a `/cookie-consent/` segment, which ad
+blockers drop; copies published there by earlier versions are still served.
 
 ## Front end
 

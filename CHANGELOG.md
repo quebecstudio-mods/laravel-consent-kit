@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.1 - 2026-10-28
+
+### Fixed
+
+- Ad blockers drop any URL with a `/cookie-consent/` segment, which left the
+  banner without its stylesheet and script, and videos without their poster.
+  The assets are now published to `public/vendor/consent-kit/` and the poster
+  route is `/consent-kit/thumbnail`. A copy published to the old directory is
+  still served until the assets are published again.
+
 ## 1.2.0 - 2026-10-06
 
 ### Added
